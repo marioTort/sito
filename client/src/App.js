@@ -1,13 +1,12 @@
 import React from 'react';
 
-import Barra from './components/navbar/navbar';
+import Routes from './routes';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <Barra />
+      <Routes />
     </div>
   );
 }
 
-export default App;

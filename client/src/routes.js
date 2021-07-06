@@ -8,14 +8,14 @@ import Dashboard from './pages/admin/dashboard/index.dashboard';
 import EliminaVeicoli from './pages/admin/veicoli/elimina.veicoli';
 import AggiungiVeicoli from './pages/admin/veicoli/aggiungi.veicoli';
 
-import EliminaImpiegati from './pages/admin/veicoli/elimina.impiegati';
+import EliminaImpiegati from './pages/admin/impiegati/elimina.impiegati';
 import ModificaImpiegati from './pages/admin/impiegati/modifica.impiegati';
 
 //*** IMPIEGATO ***
-import Impiegati from './pages/admin/impiegati/index.impiegati';
+import Impiegati from './pages/impiegato/index.impiegato';
 
 import Login from './pages/admin/login/index.login';
-import RegistraImpiegati from './pages/admin/impiegati/registra.impiegati';
+import RegistraImpiegati from './pages/impiegato/registra.impiegato';
 
 import PrivateRoute from './services/wAuth';
 
