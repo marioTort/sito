@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Barra from '../../../components/navbar/navbar';
+import Navbar from '../../../components/navbar/navbar';
 
 export default function Home() {
     return(
-        <Barra />
+        <Navbar />
     );
 }

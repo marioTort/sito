@@ -1,29 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { MenuItems } from "./menuItems"
+import { Button } from "../button/button.js";
+import './navbar.css'
+import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
-import { Button, Navbar, NavDropdown, Nav } from 'react-bootstrap';
+export default class Navbar extends Component {
+    state = { clicked: false }
 
-export default function Barra() {
-    return(
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#">Aumobi</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
-                </Nav>
-                <Nav>
-                    <Button variant="light">Accedi</Button> 
-                    <Button variant="secondary">Registrati</Button>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    );
+    handleClick = () => {
+        this.setState({ clicked: !this.state.clicked })
+    }
+
+    render() {
+        return(
+            <Nav className="NavbarItems">
+                <h1 className="navbar-logo">AUMOBI</h1>
+                <div className="menu-icon" onClick={this.handleClick}>
+                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+                </div>
+                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                    {MenuItems.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a className={item.cName} href={item.url}>
+                                {item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
+                
+                <Link to="/login">
+                    <Button>Login</Button>
+                </Link>
+            </Nav>
+        )
+    }
 }

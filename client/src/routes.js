@@ -14,7 +14,7 @@ import ModificaImpiegati from './pages/admin/impiegati/modifica.impiegati';
 //*** IMPIEGATO ***
 import Impiegati from './pages/impiegato/index.impiegato';
 
-import Login from './pages/admin/login/index.login.js';
+import Login from './pages/admin/login/index.login';
 import RegistraImpiegati from './pages/impiegato/registra.impiegato';
 
 import PrivateRoute from './services/wAuth';
@@ -22,7 +22,7 @@ import PrivateRoute from './services/wAuth';
 //*** CLIENTE ***
 import Home from './pages/cliente/home/index.home';
 
-import Veicoli from './pages/admin/veicoli/index.veicoli';
+import Veicoli from './pages/cliente/veicoli/index.veicoli';
 import DettagliVeicoli from './pages/cliente/veicoli/dettagli.veicoli';
 
 export default function Routes() {
